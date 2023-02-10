@@ -26789,7 +26789,7 @@ LoadScriptfiles( ) {
     }
 
     if(ServerInfo[HappyHours]) {
-        SendRconCommand("hostname [EW] Evening Waves [ HappyHours ]");
+        SendRconCommand("hostname [V] Valhalla [ HappyHours ]");
     }
     
     if( fexist( "Ostalo/StariParovi.ini" ) ) {
@@ -31815,10 +31815,7 @@ public OnPlayerText( playerid, text[] ) {
         SendErrorMessage( playerid, "Ne mozete pricati, u paradoxu si.");
         return 0;
     }
-	// if( PlayerCuffed[ playerid ] >= 1 ) {
-	//     SendErrorMessage( playerid, "Ne mozes pricati kad si cuffovan ili tazovan.");
-	// 	return 0;
-	// }
+
 	if( PlayerInfo[ playerid ][ xAdmin ] < 1 && PlayerInfo[ playerid ][ xSupporter ] < 1 ) {
 	 	if( antiCheatCS[ playerid ][ SpamChat ] > 0) {
 		    SCM( playerid, SVETLOCRVENA, "| V:AC | Ne mozes spamati komande svakih 2 sec!");
