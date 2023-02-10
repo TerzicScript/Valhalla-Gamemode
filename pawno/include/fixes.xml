@@ -1,0 +1,1828 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet href="file:///C|/Users/bloop/Desktop/Brzi Pawno/xml/pawndoc.xsl" type="text/xsl"?>
+<doc source="C:\Users\bloop\Desktop\Brzi Pawno\include\fixes.inc">
+	<assembly>
+		<name>fixes.inc</name>
+	</assembly>
+	<members>
+
+		<!-- enumerations -->
+		<member name="T:E_FIXES_WORLDBOUND_DATA" value="7">
+			<tagname value="E_FIXES_WORLDBOUND_DATA"/>
+			<member name="C:E_FIXES_WORLDBOUND_DATA_PX" value="0">
+				<tagname value="Float"/>
+			</member>
+			<member name="C:E_FIXES_WORLDBOUND_DATA_PY" value="1">
+				<tagname value="Float"/>
+			</member>
+			<member name="C:E_FIXES_WORLDBOUND_DATA_PZ" value="2">
+				<tagname value="Float"/>
+			</member>
+			<member name="C:E_FIXES_WORLDBOUND_DATA_LX" value="3">
+				<tagname value="Float"/>
+			</member>
+			<member name="C:E_FIXES_WORLDBOUND_DATA_LY" value="4">
+				<tagname value="Float"/>
+			</member>
+			<member name="C:E_FIXES_WORLDBOUND_DATA_UX" value="5">
+				<tagname value="Float"/>
+			</member>
+			<member name="C:E_FIXES_WORLDBOUND_DATA_UY" value="6">
+				<tagname value="Float"/>
+			</member>
+		</member>
+
+		<!-- constants -->
+		<member name="C:cellbits" value="32">
+			<referrer name="OnPlayerDisconnect"/>
+			<referrer name="FIXES_IsPAttachedObjectSlotUsed"/>
+			<referrer name="FIXES_SetPlayerAttachedObject"/>
+			<referrer name="FIXES_RemovePlayerAttachedObj"/>
+			<referrer name="_FIXES_DetermineOrder"/>
+		</member>
+		<member name="C:cellmin" value="-2147483648">
+			<referrer name="FIXES_valstr"/>
+		</member>
+		<member name="C:false" value="0">
+			<tagname value="bool"/>
+			<referrer name="FIXES_IsPlayerConnected"/>
+			<referrer name="FIXES_fclose"/>
+			<referrer name="FIXES_fputchar"/>
+			<referrer name="FIXES_Kick"/>
+		</member>
+		<member name="C:true" value="1">
+			<tagname value="bool"/>
+			<referrer name="OnFilterScriptInit"/>
+			<referrer name="OnPlayerDeath"/>
+			<referrer name="FIXES_SetPlayerName"/>
+			<referrer name="OnPlayerStateChange"/>
+			<referrer name="FIXES_Kick"/>
+		</member>
+
+		<!-- variables -->
+		<member name="F:FIXES_gsCallbackHooks1">
+			<tagname value="E_FIXES_CALLBACK_HOOKS_1"/>
+			<referrer name="FIXES_OnScriptInit"/>
+			<referrer name="OnFilterScriptInit"/>
+			<referrer name="OnGameModeInit"/>
+			<referrer name="OnGameModeExit"/>
+			<referrer name="OnFilterScriptExit"/>
+			<referrer name="OnPlayerCommandText"/>
+			<referrer name="OnPlayerConnect"/>
+			<referrer name="OnPlayerDisconnect"/>
+			<referrer name="OnPlayerDeath"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="OnPlayerStateChange"/>
+		</member>
+		<member name="F:FIXES_gsCallbackHooks2">
+			<tagname value="E_FIXES_CALLBACK_HOOKS_2"/>
+			<referrer name="FIXES_OnScriptInit"/>
+			<referrer name="OnPlayerUpdate"/>
+			<referrer name="OnPlayerInteriorChange"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="F:FIXES_gsDialogID">
+		</member>
+		<member name="F:FIXES_gsLastAnimation">
+			<referrer name="OnPlayerDeath"/>
+			<referrer name="OnPlayerUpdate"/>
+		</member>
+		<member name="F:FIXES_gsObjectSlots">
+			<referrer name="OnPlayerDisconnect"/>
+			<referrer name="FIXES_IsPAttachedObjectSlotUsed"/>
+			<referrer name="_FIXES_SetPlayerAttachedObject"/>
+			<referrer name="FIXES_SetPlayerAttachedObject"/>
+			<referrer name="FIXES_RemovePlayerAttachedObj"/>
+			<referrer name="_FIXES_DetermineOrder"/>
+		</member>
+		<member name="F:FIXES_gsPlayerBools">
+			<tagname value="e_FIXES_BOOLS"/>
+			<referrer name="OnPlayerConnect"/>
+			<referrer name="OnPlayerDisconnect"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="OnPlayerUpdate"/>
+			<referrer name="_FIXES_SetPlayerWorldBounds"/>
+			<referrer name="_FIXES_TogglePlayerControllable"/>
+			<referrer name="OnPlayerInteriorChange"/>
+			<referrer name="FIXES_BlockUpdate"/>
+			<referrer name="OnPlayerStateChange"/>
+			<referrer name="_FIXES_PutPlayerInVehicle"/>
+			<referrer name="_FIXES_AllowInteriorWeapons"/>
+			<referrer name="_FIXES_Kick"/>
+			<referrer name="FIXES_Kick"/>
+			<referrer name="_FIXES_DetermineOrder"/>
+		</member>
+		<member name="F:FIXES_gsPlayerSkin">
+		</member>
+		<member name="F:FIXES_gsPlayerWeapon">
+		</member>
+		<member name="F:FIXES_gsSettings">
+			<tagname value="e_FIXES_SETTINGS"/>
+			<referrer name="OnFilterScriptInit"/>
+			<referrer name="OnGameModeInit"/>
+			<referrer name="OnGameModeExit"/>
+			<referrer name="OnFilterScriptExit"/>
+			<referrer name="OnPlayerDeath"/>
+			<referrer name="OnPlayerUpdate"/>
+			<referrer name="_FIXES_SetPlayerWorldBounds"/>
+			<referrer name="_FIXES_TogglePlayerControllable"/>
+			<referrer name="OnPlayerInteriorChange"/>
+			<referrer name="OnPlayerStateChange"/>
+			<referrer name="FIXES_SetPlayerArmedWeapon"/>
+			<referrer name="_FIXES_PutPlayerInVehicle"/>
+			<referrer name="_FIXES_AllowInteriorWeapons"/>
+			<referrer name="_FIXES_DetermineOrder"/>
+		</member>
+		<member name="F:FIXES_gsVehicleSeatData">
+			<referrer name="OnPlayerStateChange"/>
+			<referrer name="_FIXES_PutPlayerInVehicle"/>
+			<referrer name="_FIXES_DetermineOrder"/>
+		</member>
+		<member name="F:FIXES_gsWorldbounds">
+			<referrer name="OnPlayerConnect"/>
+			<referrer name="OnPlayerUpdate"/>
+			<referrer name="_FIXES_SetPlayerWorldBounds"/>
+			<referrer name="_FIXES_DetermineOrder"/>
+		</member>
+		<member name="F:FIXES_gscAllowInteriorWeapons">
+			<referrer name="FIXES_AllowInteriorWeapons"/>
+			<referrer name="_FIXES_DetermineOrder"/>
+		</member>
+		<member name="F:FIXES_gscAllowTeleport">
+		</member>
+		<member name="F:FIXES_gscDetermineOrder">
+			<referrer name="FIXES_DetermineOrder"/>
+		</member>
+		<member name="F:FIXES_gscDialogResponse">
+			<referrer name="FIXES_OnScriptInit"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="F:FIXES_gscEnterExitModShop">
+		</member>
+		<member name="F:FIXES_gscFilterScriptExit">
+			<referrer name="FIXES_OnScriptInit"/>
+			<referrer name="OnFilterScriptExit"/>
+		</member>
+		<member name="F:FIXES_gscFilterScriptInit">
+			<referrer name="FIXES_OnScriptInit"/>
+			<referrer name="OnFilterScriptInit"/>
+		</member>
+		<member name="F:FIXES_gscGameModeExit">
+			<referrer name="FIXES_OnScriptInit"/>
+			<referrer name="OnGameModeExit"/>
+		</member>
+		<member name="F:FIXES_gscGameModeInit">
+			<referrer name="FIXES_OnScriptInit"/>
+			<referrer name="OnGameModeInit"/>
+		</member>
+		<member name="F:FIXES_gscKick">
+			<referrer name="FIXES_Kick"/>
+		</member>
+		<member name="F:FIXES_gscMaxPassengers">
+			<referrer name="OnPlayerStateChange"/>
+		</member>
+		<member name="F:FIXES_gscNULL">
+			<referrer name="OnPlayerCommandText"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="F:FIXES_gscNoGMProperty">
+			<referrer name="FIXES_DetermineOrder"/>
+			<referrer name="_FIXES_DetermineOrder"/>
+		</member>
+		<member name="F:FIXES_gscObjectMoved">
+		</member>
+		<member name="F:FIXES_gscOrderProperty">
+			<referrer name="FIXES_DetermineOrder"/>
+			<referrer name="_FIXES_DetermineOrder"/>
+		</member>
+		<member name="F:FIXES_gscPlayerClickMap">
+		</member>
+		<member name="F:FIXES_gscPlayerClickPlayer">
+		</member>
+		<member name="F:FIXES_gscPlayerClickPlayerTD">
+		</member>
+		<member name="F:FIXES_gscPlayerClickTextDraw">
+		</member>
+		<member name="F:FIXES_gscPlayerColours">
+			<referrer name="OnPlayerConnect"/>
+		</member>
+		<member name="F:FIXES_gscPlayerCommandText">
+			<referrer name="FIXES_OnScriptInit"/>
+			<referrer name="OnPlayerCommandText"/>
+		</member>
+		<member name="F:FIXES_gscPlayerConnect">
+			<referrer name="FIXES_OnScriptInit"/>
+			<referrer name="OnPlayerConnect"/>
+		</member>
+		<member name="F:FIXES_gscPlayerDeath">
+			<referrer name="FIXES_OnScriptInit"/>
+			<referrer name="OnPlayerDeath"/>
+		</member>
+		<member name="F:FIXES_gscPlayerDisconnect">
+			<referrer name="FIXES_OnScriptInit"/>
+			<referrer name="OnPlayerDisconnect"/>
+		</member>
+		<member name="F:FIXES_gscPlayerEditAttachedObj">
+		</member>
+		<member name="F:FIXES_gscPlayerEditObject">
+		</member>
+		<member name="F:FIXES_gscPlayerEnterCheckpoint">
+		</member>
+		<member name="F:FIXES_gscPlayerEnterRaceCP">
+		</member>
+		<member name="F:FIXES_gscPlayerEnterVehicle">
+		</member>
+		<member name="F:FIXES_gscPlayerExitVehicle">
+		</member>
+		<member name="F:FIXES_gscPlayerExitedMenu">
+		</member>
+		<member name="F:FIXES_gscPlayerGiveDamage">
+		</member>
+		<member name="F:FIXES_gscPlayerInteriorChange">
+			<referrer name="FIXES_OnScriptInit"/>
+			<referrer name="OnPlayerInteriorChange"/>
+		</member>
+		<member name="F:FIXES_gscPlayerKeyStateChange">
+		</member>
+		<member name="F:FIXES_gscPlayerLeaveCheckpoint">
+		</member>
+		<member name="F:FIXES_gscPlayerLeaveRaceCP">
+		</member>
+		<member name="F:FIXES_gscPlayerObjectMoved">
+		</member>
+		<member name="F:FIXES_gscPlayerPickUpPickup">
+		</member>
+		<member name="F:FIXES_gscPlayerRequestClass">
+		</member>
+		<member name="F:FIXES_gscPlayerRequestSpawn">
+		</member>
+		<member name="F:FIXES_gscPlayerSelectObject">
+		</member>
+		<member name="F:FIXES_gscPlayerSelectedMenuRow">
+		</member>
+		<member name="F:FIXES_gscPlayerSpawn">
+			<referrer name="FIXES_OnScriptInit"/>
+			<referrer name="OnPlayerSpawn"/>
+		</member>
+		<member name="F:FIXES_gscPlayerStateChange">
+			<referrer name="FIXES_OnScriptInit"/>
+			<referrer name="OnPlayerStateChange"/>
+		</member>
+		<member name="F:FIXES_gscPlayerStreamIn">
+		</member>
+		<member name="F:FIXES_gscPlayerStreamOut">
+		</member>
+		<member name="F:FIXES_gscPlayerTakeDamage">
+		</member>
+		<member name="F:FIXES_gscPlayerText">
+		</member>
+		<member name="F:FIXES_gscPlayerUpdate">
+			<referrer name="FIXES_OnScriptInit"/>
+			<referrer name="OnPlayerUpdate"/>
+		</member>
+		<member name="F:FIXES_gscPutPlayerInVehicle">
+			<referrer name="FIXES_PutPlayerInVehicle"/>
+			<referrer name="_FIXES_DetermineOrder"/>
+		</member>
+		<member name="F:FIXES_gscRconCommand">
+		</member>
+		<member name="F:FIXES_gscRconLoginAttempt">
+		</member>
+		<member name="F:FIXES_gscReturnProperty">
+			<referrer name="FIXES_SetPlayerWorldBounds"/>
+			<referrer name="_FIXES_SetPlayerWorldBounds"/>
+			<referrer name="FIXES_TogglePlayerControllable"/>
+			<referrer name="_FIXES_TogglePlayerControllable"/>
+		</member>
+		<member name="F:FIXES_gscSetPlayerAttachedObj">
+			<referrer name="FIXES_SetPlayerAttachedObject"/>
+			<referrer name="FIXES_RemovePlayerAttachedObj"/>
+			<referrer name="_FIXES_DetermineOrder"/>
+		</member>
+		<member name="F:FIXES_gscSetPlayerWorldBounds">
+			<referrer name="FIXES_SetPlayerWorldBounds"/>
+			<referrer name="_FIXES_DetermineOrder"/>
+		</member>
+		<member name="F:FIXES_gscSpec@">
+			<referrer name="FIXES_DetermineOrder"/>
+			<referrer name="OnFilterScriptInit"/>
+			<referrer name="OnGameModeInit"/>
+			<referrer name="OnGameModeExit"/>
+			<referrer name="OnFilterScriptExit"/>
+		</member>
+		<member name="F:FIXES_gscSpec@i">
+			<referrer name="OnPlayerConnect"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="OnPlayerUpdate"/>
+			<referrer name="FIXES_AllowInteriorWeapons"/>
+			<referrer name="FIXES_Kick"/>
+			<referrer name="_FIXES_DetermineOrder"/>
+		</member>
+		<member name="F:FIXES_gscSpec@ifff">
+		</member>
+		<member name="F:FIXES_gscSpec@iffff">
+			<referrer name="FIXES_SetPlayerWorldBounds"/>
+			<referrer name="_FIXES_DetermineOrder"/>
+		</member>
+		<member name="F:FIXES_gscSpec@ii">
+			<referrer name="OnPlayerDisconnect"/>
+			<referrer name="FIXES_TogglePlayerControllable"/>
+			<referrer name="FIXES_SetPlayerAttachedObject"/>
+			<referrer name="FIXES_RemovePlayerAttachedObj"/>
+			<referrer name="_FIXES_DetermineOrder"/>
+		</member>
+		<member name="F:FIXES_gscSpec@iii">
+			<referrer name="OnPlayerDeath"/>
+			<referrer name="OnPlayerInteriorChange"/>
+			<referrer name="OnPlayerStateChange"/>
+			<referrer name="_FIXES_DetermineOrder"/>
+		</member>
+		<member name="F:FIXES_gscSpec@iiiii">
+			<referrer name="FIXES_PutPlayerInVehicle"/>
+		</member>
+		<member name="F:FIXES_gscSpec@iiiis">
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="F:FIXES_gscSpec@is">
+			<referrer name="OnPlayerCommandText"/>
+		</member>
+		<member name="F:FIXES_gscTempName">
+			<referrer name="OnPlayerConnect"/>
+			<referrer name="FIXES_SetPlayerName"/>
+		</member>
+		<member name="F:FIXES_gscTogglePlayerControl">
+			<referrer name="FIXES_TogglePlayerControllable"/>
+			<referrer name="_FIXES_DetermineOrder"/>
+		</member>
+		<member name="F:FIXES_gscVehicleDamageStatusUp">
+		</member>
+		<member name="F:FIXES_gscVehicleDeath">
+		</member>
+		<member name="F:FIXES_gscVehicleMod">
+		</member>
+		<member name="F:FIXES_gscVehiclePaintjob">
+		</member>
+		<member name="F:FIXES_gscVehicleRespray">
+		</member>
+		<member name="F:FIXES_gscVehicleSpawn">
+		</member>
+		<member name="F:FIXES_gscVehicleStreamIn">
+		</member>
+		<member name="F:FIXES_gscVehicleStreamOut">
+		</member>
+		<member name="F:FIXES_pvarKick">
+			<referrer name="OnPlayerDisconnect"/>
+			<referrer name="FIXES_Kick"/>
+		</member>
+		<member name="F:FIXES_pvarNotNewPlayer">
+			<referrer name="OnPlayerConnect"/>
+		</member>
+		<member name="F:FIXES_pvarPlayerDialog">
+			<referrer name="OnPlayerConnect"/>
+			<referrer name="FIXES_ShowPlayerDialog"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="F:FIXES_pvarPlayerSkin">
+			<referrer name="OnPlayerConnect"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="FIXES_SetPlayerSkin"/>
+			<referrer name="FIXES_GetPlayerSkin"/>
+		</member>
+		<member name="F:FIXES_pvarPlayerWeapon">
+			<referrer name="OnPlayerConnect"/>
+			<referrer name="OnPlayerInteriorChange"/>
+			<referrer name="OnPlayerStateChange"/>
+			<referrer name="FIXES_GivePlayerWeapon"/>
+			<referrer name="FIXES_SetPlayerArmedWeapon"/>
+			<referrer name="FIXES_GetPlayerWeapon"/>
+		</member>
+		<member name="F:_FIXES_gIsFilterscript">
+			<tagname value="bool"/>
+			<referrer name="OnFilterScriptInit"/>
+			<referrer name="OnGameModeInit"/>
+			<referrer name="OnGameModeExit"/>
+			<referrer name="OnFilterScriptExit"/>
+			<referrer name="OnPlayerDisconnect"/>
+			<referrer name="_FIXES_DetermineOrder"/>
+		</member>
+		<member name="F:__date">
+		</member>
+		<member name="F:__file">
+		</member>
+		<member name="F:__time">
+		</member>
+
+		<!-- functions -->
+		<member name="M:CallLocalFunction" syntax="CallLocalFunction()">
+			<stacksize value="1"/>
+			<referrer name="OnFilterScriptInit"/>
+			<referrer name="OnGameModeInit"/>
+			<referrer name="OnGameModeExit"/>
+			<referrer name="OnFilterScriptExit"/>
+			<referrer name="OnPlayerCommandText"/>
+			<referrer name="OnPlayerConnect"/>
+			<referrer name="OnPlayerDisconnect"/>
+			<referrer name="OnPlayerDeath"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="OnPlayerUpdate"/>
+			<referrer name="OnPlayerInteriorChange"/>
+			<referrer name="OnPlayerStateChange"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="M:CallRemoteFunction" syntax="CallRemoteFunction()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_DetermineOrder"/>
+			<referrer name="FIXES_SetPlayerWorldBounds"/>
+			<referrer name="FIXES_TogglePlayerControllable"/>
+			<referrer name="FIXES_PutPlayerInVehicle"/>
+			<referrer name="FIXES_AllowInteriorWeapons"/>
+			<referrer name="FIXES_SetPlayerAttachedObject"/>
+			<referrer name="FIXES_RemovePlayerAttachedObj"/>
+			<referrer name="_FIXES_DetermineOrder"/>
+		</member>
+		<member name="M:ClearAnimations" syntax="ClearAnimations()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerDeath"/>
+			<referrer name="FIXES_SetPlayerSkin"/>
+			<referrer name="FIXES_SetPlayerSpecialAction"/>
+		</member>
+		<member name="M:DisablePlayerCheckpoint" syntax="DisablePlayerCheckpoint()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerConnect"/>
+			<referrer name="FIXES_SetPlayerCheckpoint"/>
+		</member>
+		<member name="M:DisablePlayerRaceCheckpoint" syntax="DisablePlayerRaceCheckpoint()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerConnect"/>
+			<referrer name="FIXES_SetPlayerRaceCheckpoint"/>
+		</member>
+		<member name="M:FIXES_AllowInteriorWeapons" syntax="FIXES_AllowInteriorWeapons(allow)">
+			<stacksize value="6"/>
+			<dependency name="CallRemoteFunction"/>
+			<dependency name="FIXES_gscAllowInteriorWeapons"/>
+			<dependency name="FIXES_gscSpec@i"/>
+			<param name="allow">
+			</param>
+		</member>
+		<member name="M:FIXES_BlockUpdate" syntax="FIXES_BlockUpdate(playerid, block)">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerStateChange"/>
+			<referrer name="FIXES_Kick"/>
+			<dependency name="FIXES_gsPlayerBools"/>
+			<dependency name="e_FIXES_BOOLS_BLOCK"/>
+			<param name="playerid">
+			</param>
+			<param name="block">
+				<paraminfo>bool </paraminfo>
+			</param>
+		</member>
+		<member name="M:FIXES_DetermineOrder" syntax="FIXES_DetermineOrder()">
+			<stacksize value="6"/>
+			<referrer name="FIXES_OnScriptInit"/>
+			<referrer name="OnGameModeExit"/>
+			<referrer name="OnFilterScriptExit"/>
+			<dependency name="CallRemoteFunction"/>
+			<dependency name="FIXES_gscDetermineOrder"/>
+			<dependency name="FIXES_gscNoGMProperty"/>
+			<dependency name="FIXES_gscOrderProperty"/>
+			<dependency name="FIXES_gscSpec@"/>
+			<dependency name="deleteproperty"/>
+			<dependency name="setproperty"/>
+		</member>
+		<member name="M:FIXES_GetPlayerSkin" syntax="FIXES_GetPlayerSkin(playerid)">
+			<stacksize value="5"/>
+			<dependency name="FIXES_pvarPlayerSkin"/>
+			<dependency name="GetPVarInt"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:FIXES_GetPlayerWeapon" syntax="FIXES_GetPlayerWeapon(playerid)">
+			<stacksize value="6"/>
+			<dependency name="FIXES_pvarPlayerWeapon"/>
+			<dependency name="GetPVarInt"/>
+			<dependency name="GetPlayerWeapon"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:FIXES_GetWeaponName" syntax="FIXES_GetWeaponName(weaponid, weapon[], len)">
+			<stacksize value="6"/>
+			<dependency name="GetWeaponName"/>
+			<dependency name="strcat"/>
+			<param name="weaponid">
+			</param>
+			<param name="weapon">
+				<paraminfo> [] </paraminfo>
+			</param>
+			<param name="len">
+			</param>
+		</member>
+		<member name="M:FIXES_GivePlayerWeapon" syntax="FIXES_GivePlayerWeapon(playerid, weaponid, ammo)">
+			<stacksize value="7"/>
+			<dependency name="FIXES_pvarPlayerWeapon"/>
+			<dependency name="GetPlayerVehicleID"/>
+			<dependency name="GetVehicleModel"/>
+			<dependency name="GivePlayerWeapon"/>
+			<dependency name="SetPVarInt"/>
+			<dependency name="SetPlayerArmedWeapon"/>
+			<param name="playerid">
+			</param>
+			<param name="weaponid">
+			</param>
+			<param name="ammo">
+			</param>
+		</member>
+		<member name="M:FIXES_HideMenuForPlayer" syntax="FIXES_HideMenuForPlayer(menuid, playerid)">
+			<stacksize value="5"/>
+			<dependency name="HideMenuForPlayer"/>
+			<dependency name="IsValidMenu"/>
+			<param name="menuid">
+				<paraminfo>Menu </paraminfo>
+			</param>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:FIXES_IsPAttachedObjectSlotUsed" syntax="FIXES_IsPAttachedObjectSlotUsed(playerid, index)">
+			<stacksize value="4"/>
+			<dependency name="FIXES_IsPlayerConnected"/>
+			<dependency name="FIXES_gsObjectSlots"/>
+			<dependency name="cellbits"/>
+			<param name="playerid">
+			</param>
+			<param name="index">
+			</param>
+		</member>
+		<member name="M:FIXES_IsPlayerConnected" syntax="FIXES_IsPlayerConnected(playerid)">
+			<stacksize value="4"/>
+			<referrer name="FIXES_IsPAttachedObjectSlotUsed"/>
+			<referrer name="_FIXES_DetermineOrder"/>
+			<dependency name="IsPlayerConnected"/>
+			<dependency name="false"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:FIXES_Kick" syntax="FIXES_Kick(playerid)">
+			<stacksize value="10"/>
+			<dependency name="FIXES_BlockUpdate"/>
+			<dependency name="FIXES_TogglePlayerControllable"/>
+			<dependency name="FIXES_gsPlayerBools"/>
+			<dependency name="FIXES_gscKick"/>
+			<dependency name="FIXES_gscSpec@i"/>
+			<dependency name="FIXES_pvarKick"/>
+			<dependency name="Kick"/>
+			<dependency name="SetPVarInt"/>
+			<dependency name="SetTimerEx"/>
+			<dependency name="TogglePlayerSpectating"/>
+			<dependency name="e_FIXES_BOOLS_KICKED"/>
+			<dependency name="e_FIXES_BOOLS_ON_PLAYER_CONNECT"/>
+			<dependency name="false"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:FIXES_OnDialogResponse" syntax="FIXES_OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])">
+			<stacksize value="1"/>
+			<param name="playerid">
+			</param>
+			<param name="dialogid">
+			</param>
+			<param name="response">
+			</param>
+			<param name="listitem">
+			</param>
+			<param name="inputtext">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:FIXES_OnFilterScriptExit" syntax="FIXES_OnFilterScriptExit()">
+			<stacksize value="1"/>
+		</member>
+		<member name="M:FIXES_OnFilterScriptInit" syntax="FIXES_OnFilterScriptInit()">
+			<stacksize value="1"/>
+		</member>
+		<member name="M:FIXES_OnGameModeExit" syntax="FIXES_OnGameModeExit()">
+			<stacksize value="1"/>
+		</member>
+		<member name="M:FIXES_OnGameModeInit" syntax="FIXES_OnGameModeInit()">
+			<stacksize value="1"/>
+		</member>
+		<member name="M:FIXES_OnPlayerCommandText" syntax="FIXES_OnPlayerCommandText(playerid, cmdtext[])">
+			<stacksize value="1"/>
+			<param name="playerid">
+			</param>
+			<param name="cmdtext">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:FIXES_OnPlayerConnect" syntax="FIXES_OnPlayerConnect(playerid)">
+			<stacksize value="1"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:FIXES_OnPlayerDeath" syntax="FIXES_OnPlayerDeath(playerid, killerid, reason)">
+			<stacksize value="1"/>
+			<param name="playerid">
+			</param>
+			<param name="killerid">
+			</param>
+			<param name="reason">
+			</param>
+		</member>
+		<member name="M:FIXES_OnPlayerDisconnect" syntax="FIXES_OnPlayerDisconnect(playerid, reason)">
+			<stacksize value="1"/>
+			<param name="playerid">
+			</param>
+			<param name="reason">
+			</param>
+		</member>
+		<member name="M:FIXES_OnPlayerInteriorChange" syntax="FIXES_OnPlayerInteriorChange(playerid, newinteriorid, oldinteriorid)">
+			<stacksize value="1"/>
+			<param name="playerid">
+			</param>
+			<param name="newinteriorid">
+			</param>
+			<param name="oldinteriorid">
+			</param>
+		</member>
+		<member name="M:FIXES_OnPlayerSpawn" syntax="FIXES_OnPlayerSpawn(playerid)">
+			<stacksize value="1"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:FIXES_OnPlayerStateChange" syntax="FIXES_OnPlayerStateChange(playerid, newstate, oldstate)">
+			<stacksize value="1"/>
+			<param name="playerid">
+			</param>
+			<param name="newstate">
+			</param>
+			<param name="oldstate">
+			</param>
+		</member>
+		<member name="M:FIXES_OnPlayerUpdate" syntax="FIXES_OnPlayerUpdate(playerid)">
+			<stacksize value="1"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:FIXES_OnScriptInit" syntax="FIXES_OnScriptInit()">
+			<stacksize value="4"/>
+			<referrer name="OnFilterScriptInit"/>
+			<referrer name="OnGameModeInit"/>
+			<dependency name="E_FIXES_OnDialogResponse"/>
+			<dependency name="E_FIXES_OnFilterScriptExit"/>
+			<dependency name="E_FIXES_OnFilterScriptInit"/>
+			<dependency name="E_FIXES_OnGameModeExit"/>
+			<dependency name="E_FIXES_OnGameModeInit"/>
+			<dependency name="E_FIXES_OnPlayerCommandText"/>
+			<dependency name="E_FIXES_OnPlayerConnect"/>
+			<dependency name="E_FIXES_OnPlayerDeath"/>
+			<dependency name="E_FIXES_OnPlayerDisconnect"/>
+			<dependency name="E_FIXES_OnPlayerInteriorChange"/>
+			<dependency name="E_FIXES_OnPlayerSpawn"/>
+			<dependency name="E_FIXES_OnPlayerStateChange"/>
+			<dependency name="E_FIXES_OnPlayerUpdate"/>
+			<dependency name="FIXES_DetermineOrder"/>
+			<dependency name="FIXES_gsCallbackHooks1"/>
+			<dependency name="FIXES_gsCallbackHooks2"/>
+			<dependency name="FIXES_gscDialogResponse"/>
+			<dependency name="FIXES_gscFilterScriptExit"/>
+			<dependency name="FIXES_gscFilterScriptInit"/>
+			<dependency name="FIXES_gscGameModeExit"/>
+			<dependency name="FIXES_gscGameModeInit"/>
+			<dependency name="FIXES_gscPlayerCommandText"/>
+			<dependency name="FIXES_gscPlayerConnect"/>
+			<dependency name="FIXES_gscPlayerDeath"/>
+			<dependency name="FIXES_gscPlayerDisconnect"/>
+			<dependency name="FIXES_gscPlayerInteriorChange"/>
+			<dependency name="FIXES_gscPlayerSpawn"/>
+			<dependency name="FIXES_gscPlayerStateChange"/>
+			<dependency name="FIXES_gscPlayerUpdate"/>
+			<dependency name="funcidx"/>
+		</member>
+		<member name="M:FIXES_PutPlayerInVehicle" syntax="FIXES_PutPlayerInVehicle(playerid, vehicleid, seatid)">
+			<stacksize value="14"/>
+			<dependency name="CallRemoteFunction"/>
+			<dependency name="FIXES_gscPutPlayerInVehicle"/>
+			<dependency name="FIXES_gscSpec@iiiii"/>
+			<dependency name="GetPlayerVehicleID"/>
+			<dependency name="GetVehicleModel"/>
+			<dependency name="GetVehiclePos"/>
+			<dependency name="PutPlayerInVehicle"/>
+			<dependency name="SetPlayerPos"/>
+			<param name="playerid">
+			</param>
+			<param name="vehicleid">
+			</param>
+			<param name="seatid">
+			</param>
+		</member>
+		<member name="M:FIXES_RemovePlayerAttachedObj" syntax="FIXES_RemovePlayerAttachedObj(playerid, index)">
+			<stacksize value="8"/>
+			<dependency name="CallRemoteFunction"/>
+			<dependency name="FIXES_gsObjectSlots"/>
+			<dependency name="FIXES_gscSetPlayerAttachedObj"/>
+			<dependency name="FIXES_gscSpec@ii"/>
+			<dependency name="RemovePlayerAttachedObject"/>
+			<dependency name="cellbits"/>
+			<param name="playerid">
+			</param>
+			<param name="index">
+			</param>
+		</member>
+		<member name="M:FIXES_SetPlayerArmedWeapon" syntax="FIXES_SetPlayerArmedWeapon(playerid, weaponid)">
+			<stacksize value="7"/>
+			<dependency name="FIXES_gsSettings"/>
+			<dependency name="FIXES_pvarPlayerWeapon"/>
+			<dependency name="GetPlayerInterior"/>
+			<dependency name="GetPlayerVehicleID"/>
+			<dependency name="GetVehicleModel"/>
+			<dependency name="SetPVarInt"/>
+			<dependency name="SetPlayerArmedWeapon"/>
+			<dependency name="e_FIXES_SETTINGS_INTERIOR"/>
+			<param name="playerid">
+			</param>
+			<param name="weaponid">
+			</param>
+		</member>
+		<member name="M:FIXES_SetPlayerAttachedObject" syntax="FIXES_SetPlayerAttachedObject(playerid, index, modelid, bone, fOffsetX, fOffsetY, fOffsetZ, fRotX, fRotY, fRotZ, fScaleX, fScaleY, fScaleZ)">
+			<stacksize value="16"/>
+			<dependency name="CallRemoteFunction"/>
+			<dependency name="FIXES_gsObjectSlots"/>
+			<dependency name="FIXES_gscSetPlayerAttachedObj"/>
+			<dependency name="FIXES_gscSpec@ii"/>
+			<dependency name="SetPlayerAttachedObject"/>
+			<dependency name="cellbits"/>
+			<param name="playerid">
+			</param>
+			<param name="index">
+			</param>
+			<param name="modelid">
+			</param>
+			<param name="bone">
+			</param>
+			<param name="fOffsetX">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="fOffsetY">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="fOffsetZ">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="fRotX">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="fRotY">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="fRotZ">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="fScaleX">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="fScaleY">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="fScaleZ">
+				<paraminfo>Float </paraminfo>
+			</param>
+		</member>
+		<member name="M:FIXES_SetPlayerCheckpoint" syntax="FIXES_SetPlayerCheckpoint(playerid, x, y, z, size)">
+			<stacksize value="8"/>
+			<dependency name="DisablePlayerCheckpoint"/>
+			<dependency name="SetPlayerCheckpoint"/>
+			<param name="playerid">
+			</param>
+			<param name="x">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="y">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="z">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="size">
+				<paraminfo>Float </paraminfo>
+			</param>
+		</member>
+		<member name="M:FIXES_SetPlayerName" syntax="FIXES_SetPlayerName(playerid, name[])">
+			<stacksize value="6"/>
+			<dependency name="FIXES_gscTempName"/>
+			<dependency name="GetPlayerName"/>
+			<dependency name="SetPlayerName"/>
+			<dependency name="strcmp"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+			<param name="name">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:FIXES_SetPlayerRaceCheckpoint" syntax="FIXES_SetPlayerRaceCheckpoint(playerid, type, x, y, z, nextx, nexty, nextz, size)">
+			<stacksize value="12"/>
+			<dependency name="DisablePlayerRaceCheckpoint"/>
+			<dependency name="SetPlayerRaceCheckpoint"/>
+			<param name="playerid">
+			</param>
+			<param name="type">
+			</param>
+			<param name="x">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="y">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="z">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="nextx">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="nexty">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="nextz">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="size">
+				<paraminfo>Float </paraminfo>
+			</param>
+		</member>
+		<member name="M:FIXES_SetPlayerSkin" syntax="FIXES_SetPlayerSkin(playerid, skinid)">
+			<stacksize value="9"/>
+			<dependency name="ClearAnimations"/>
+			<dependency name="FIXES_pvarPlayerSkin"/>
+			<dependency name="GetPlayerVehicleID"/>
+			<dependency name="GetPlayerVehicleSeat"/>
+			<dependency name="PutPlayerInVehicle"/>
+			<dependency name="SetPVarInt"/>
+			<dependency name="SetPlayerSkin"/>
+			<param name="playerid">
+			</param>
+			<param name="skinid">
+			</param>
+		</member>
+		<member name="M:FIXES_SetPlayerSpecialAction" syntax="FIXES_SetPlayerSpecialAction(playerid, actionid)">
+			<stacksize value="5"/>
+			<dependency name="ClearAnimations"/>
+			<dependency name="GetPlayerSpecialAction"/>
+			<dependency name="SetPlayerSpecialAction"/>
+			<param name="playerid">
+			</param>
+			<param name="actionid">
+			</param>
+		</member>
+		<member name="M:FIXES_SetPlayerWorldBounds" syntax="FIXES_SetPlayerWorldBounds(playerid, x_max, x_min, y_max, y_min)">
+			<stacksize value="10"/>
+			<dependency name="CallRemoteFunction"/>
+			<dependency name="FIXES_gscReturnProperty"/>
+			<dependency name="FIXES_gscSetPlayerWorldBounds"/>
+			<dependency name="FIXES_gscSpec@iffff"/>
+			<dependency name="getproperty"/>
+			<param name="playerid">
+			</param>
+			<param name="x_max">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="x_min">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="y_max">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="y_min">
+				<paraminfo>Float </paraminfo>
+			</param>
+		</member>
+		<member name="M:FIXES_ShowPlayerDialog" syntax="FIXES_ShowPlayerDialog(playerid, dialog, style, title[], caption[], button1[], button2[])">
+			<stacksize value="10"/>
+			<dependency name="FIXES_pvarPlayerDialog"/>
+			<dependency name="SetPVarInt"/>
+			<dependency name="ShowPlayerDialog"/>
+			<param name="playerid">
+			</param>
+			<param name="dialog">
+			</param>
+			<param name="style">
+			</param>
+			<param name="title">
+				<paraminfo> [] </paraminfo>
+			</param>
+			<param name="caption">
+				<paraminfo> [] </paraminfo>
+			</param>
+			<param name="button1">
+				<paraminfo> [] </paraminfo>
+			</param>
+			<param name="button2">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:FIXES_SpawnPlayer" syntax="FIXES_SpawnPlayer(playerid)">
+			<stacksize value="11"/>
+			<dependency name="GetPlayerVehicleID"/>
+			<dependency name="GetVehiclePos"/>
+			<dependency name="SetPlayerPos"/>
+			<dependency name="SpawnPlayer"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:FIXES_TextDrawCreate" syntax="FIXES_TextDrawCreate(x, y, text[])">
+			<tagname value="Text"/>
+			<stacksize value="6"/>
+			<dependency name="TextDrawCreate"/>
+			<param name="x">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="y">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="text">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:FIXES_TextDrawSetString" syntax="FIXES_TextDrawSetString(text, string[])">
+			<stacksize value="5"/>
+			<dependency name="TextDrawSetString"/>
+			<param name="text">
+				<paraminfo>Text </paraminfo>
+			</param>
+			<param name="string">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:FIXES_TogglePlayerControllable" syntax="FIXES_TogglePlayerControllable(playerid, toggle)">
+			<stacksize value="7"/>
+			<referrer name="FIXES_Kick"/>
+			<dependency name="CallRemoteFunction"/>
+			<dependency name="FIXES_gscReturnProperty"/>
+			<dependency name="FIXES_gscSpec@ii"/>
+			<dependency name="FIXES_gscTogglePlayerControl"/>
+			<dependency name="getproperty"/>
+			<param name="playerid">
+			</param>
+			<param name="toggle">
+			</param>
+		</member>
+		<member name="M:FIXES_fblockread" syntax="FIXES_fblockread(handle, buffer[], size)">
+			<stacksize value="6"/>
+			<dependency name="fblockread"/>
+			<param name="handle">
+				<paraminfo>File </paraminfo>
+			</param>
+			<param name="buffer">
+				<paraminfo> [] </paraminfo>
+			</param>
+			<param name="size">
+			</param>
+		</member>
+		<member name="M:FIXES_fblockwrite" syntax="FIXES_fblockwrite(handle, buffer[], size)">
+			<stacksize value="6"/>
+			<dependency name="fblockwrite"/>
+			<param name="handle">
+				<paraminfo>File </paraminfo>
+			</param>
+			<param name="buffer">
+				<paraminfo> [] </paraminfo>
+			</param>
+			<param name="size">
+			</param>
+		</member>
+		<member name="M:FIXES_fclose" syntax="FIXES_fclose(handle)">
+			<tagname value="bool"/>
+			<stacksize value="4"/>
+			<dependency name="false"/>
+			<dependency name="fclose"/>
+			<param name="handle">
+				<paraminfo>File </paraminfo>
+			</param>
+		</member>
+		<member name="M:FIXES_fgetchar" syntax="FIXES_fgetchar(handle, value, utf8)">
+			<stacksize value="6"/>
+			<dependency name="fgetchar"/>
+			<param name="handle">
+				<paraminfo>File </paraminfo>
+			</param>
+			<param name="value">
+			</param>
+			<param name="utf8">
+				<paraminfo>bool </paraminfo>
+			</param>
+		</member>
+		<member name="M:FIXES_flength" syntax="FIXES_flength(handle)">
+			<stacksize value="4"/>
+			<dependency name="flength"/>
+			<param name="handle">
+				<paraminfo>File </paraminfo>
+			</param>
+		</member>
+		<member name="M:FIXES_fputchar" syntax="FIXES_fputchar(handle, value, utf8)">
+			<tagname value="bool"/>
+			<stacksize value="6"/>
+			<dependency name="false"/>
+			<dependency name="fputchar"/>
+			<param name="handle">
+				<paraminfo>File </paraminfo>
+			</param>
+			<param name="value">
+			</param>
+			<param name="utf8">
+				<paraminfo>bool </paraminfo>
+			</param>
+		</member>
+		<member name="M:FIXES_fread" syntax="FIXES_fread(handle, string[], size, pack)">
+			<stacksize value="7"/>
+			<dependency name="fread"/>
+			<param name="handle">
+				<paraminfo>File </paraminfo>
+			</param>
+			<param name="string">
+				<paraminfo> [] </paraminfo>
+			</param>
+			<param name="size">
+			</param>
+			<param name="pack">
+				<paraminfo>bool </paraminfo>
+			</param>
+		</member>
+		<member name="M:FIXES_fseek" syntax="FIXES_fseek(handle, position, whence)">
+			<stacksize value="6"/>
+			<dependency name="fseek"/>
+			<param name="handle">
+				<paraminfo>File </paraminfo>
+			</param>
+			<param name="position">
+			</param>
+			<param name="whence">
+				<paraminfo>seek_whence </paraminfo>
+			</param>
+		</member>
+		<member name="M:FIXES_fwrite" syntax="FIXES_fwrite(handle, string[])">
+			<stacksize value="5"/>
+			<dependency name="fwrite"/>
+			<param name="handle">
+				<paraminfo>File </paraminfo>
+			</param>
+			<param name="string">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:FIXES_strins" syntax="FIXES_strins(string[], substr[], pos, maxlength)">
+			<stacksize value="10"/>
+			<dependency name="format"/>
+			<dependency name="strcat"/>
+			<dependency name="strins"/>
+			<dependency name="strlen"/>
+			<param name="string">
+				<paraminfo> [] </paraminfo>
+			</param>
+			<param name="substr">
+				<paraminfo> [] </paraminfo>
+			</param>
+			<param name="pos">
+			</param>
+			<param name="maxlength">
+			</param>
+		</member>
+		<member name="M:FIXES_valstr" syntax="FIXES_valstr(dest[], value, pack)">
+			<stacksize value="7"/>
+			<dependency name="cellmin"/>
+			<dependency name="format"/>
+			<dependency name="strpack"/>
+			<dependency name="strunpack"/>
+			<param name="dest">
+				<paraminfo> [] </paraminfo>
+			</param>
+			<param name="value">
+			</param>
+			<param name="pack">
+				<paraminfo>bool </paraminfo>
+			</param>
+		</member>
+		<member name="M:GetAnimationName" syntax="GetAnimationName()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerDeath"/>
+		</member>
+		<member name="M:GetPVarInt" syntax="GetPVarInt()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerConnect"/>
+			<referrer name="OnPlayerDisconnect"/>
+			<referrer name="FIXES_GetPlayerSkin"/>
+			<referrer name="FIXES_GetPlayerWeapon"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="M:GetPlayerAnimationIndex" syntax="GetPlayerAnimationIndex()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerUpdate"/>
+		</member>
+		<member name="M:GetPlayerInterior" syntax="GetPlayerInterior()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_SetPlayerArmedWeapon"/>
+			<referrer name="_FIXES_AllowInteriorWeapons"/>
+		</member>
+		<member name="M:GetPlayerKeys" syntax="GetPlayerKeys()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerUpdate"/>
+		</member>
+		<member name="M:GetPlayerName" syntax="GetPlayerName()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerConnect"/>
+			<referrer name="FIXES_SetPlayerName"/>
+		</member>
+		<member name="M:GetPlayerPos" syntax="GetPlayerPos()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerUpdate"/>
+			<referrer name="_FIXES_SetPlayerWorldBounds"/>
+		</member>
+		<member name="M:GetPlayerSkin" syntax="GetPlayerSkin()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerSpawn"/>
+		</member>
+		<member name="M:GetPlayerSpecialAction" syntax="GetPlayerSpecialAction()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_SetPlayerSpecialAction"/>
+		</member>
+		<member name="M:GetPlayerVehicleID" syntax="GetPlayerVehicleID()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_SpawnPlayer"/>
+			<referrer name="FIXES_SetPlayerSkin"/>
+			<referrer name="OnPlayerStateChange"/>
+			<referrer name="FIXES_GivePlayerWeapon"/>
+			<referrer name="FIXES_SetPlayerArmedWeapon"/>
+			<referrer name="FIXES_PutPlayerInVehicle"/>
+		</member>
+		<member name="M:GetPlayerVehicleSeat" syntax="GetPlayerVehicleSeat()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_SetPlayerSkin"/>
+			<referrer name="OnPlayerStateChange"/>
+		</member>
+		<member name="M:GetPlayerWeapon" syntax="GetPlayerWeapon()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerStateChange"/>
+			<referrer name="FIXES_GetPlayerWeapon"/>
+		</member>
+		<member name="M:GetVehicleModel" syntax="GetVehicleModel()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerStateChange"/>
+			<referrer name="FIXES_GivePlayerWeapon"/>
+			<referrer name="FIXES_SetPlayerArmedWeapon"/>
+			<referrer name="FIXES_PutPlayerInVehicle"/>
+		</member>
+		<member name="M:GetVehiclePos" syntax="GetVehiclePos()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_SpawnPlayer"/>
+			<referrer name="FIXES_PutPlayerInVehicle"/>
+		</member>
+		<member name="M:GetWeaponName" syntax="GetWeaponName()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_GetWeaponName"/>
+		</member>
+		<member name="M:GivePlayerWeapon" syntax="GivePlayerWeapon()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_GivePlayerWeapon"/>
+		</member>
+		<member name="M:HideMenuForPlayer" syntax="HideMenuForPlayer()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_HideMenuForPlayer"/>
+		</member>
+		<member name="M:IsPlayerConnected" syntax="IsPlayerConnected()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_IsPlayerConnected"/>
+		</member>
+		<member name="M:IsPlayerInAnyVehicle" syntax="IsPlayerInAnyVehicle()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerInteriorChange"/>
+		</member>
+		<member name="M:IsValidMenu" syntax="IsValidMenu()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_HideMenuForPlayer"/>
+		</member>
+		<member name="M:Kick" syntax="Kick()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerConnect"/>
+			<referrer name="OnPlayerStateChange"/>
+			<referrer name="_FIXES_Kick"/>
+			<referrer name="FIXES_Kick"/>
+		</member>
+		<member name="M:KillTimer" syntax="KillTimer()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerDisconnect"/>
+		</member>
+		<member name="M:OnDialogResponse" syntax="OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])">
+			<attribute name="public"/>
+			<stacksize value="10"/>
+			<dependency name="CallLocalFunction"/>
+			<dependency name="E_FIXES_OnDialogResponse"/>
+			<dependency name="FIXES_gsCallbackHooks2"/>
+			<dependency name="FIXES_gscDialogResponse"/>
+			<dependency name="FIXES_gscNULL"/>
+			<dependency name="FIXES_gscSpec@iiiis"/>
+			<dependency name="FIXES_pvarPlayerDialog"/>
+			<dependency name="GetPVarInt"/>
+			<param name="playerid">
+			</param>
+			<param name="dialogid">
+			</param>
+			<param name="response">
+			</param>
+			<param name="listitem">
+			</param>
+			<param name="inputtext">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:OnFilterScriptExit" syntax="OnFilterScriptExit()">
+			<attribute name="public"/>
+			<stacksize value="5"/>
+			<dependency name="CallLocalFunction"/>
+			<dependency name="E_FIXES_OnFilterScriptExit"/>
+			<dependency name="FIXES_DetermineOrder"/>
+			<dependency name="FIXES_gsCallbackHooks1"/>
+			<dependency name="FIXES_gsSettings"/>
+			<dependency name="FIXES_gscFilterScriptExit"/>
+			<dependency name="FIXES_gscSpec@"/>
+			<dependency name="_FIXES_gIsFilterscript"/>
+			<dependency name="e_FIXES_SETTINGS_ENDING"/>
+			<dependency name="e_FIXES_SETTINGS_IN_CHARGE"/>
+		</member>
+		<member name="M:OnFilterScriptInit" syntax="OnFilterScriptInit()">
+			<attribute name="public"/>
+			<stacksize value="5"/>
+			<dependency name="CallLocalFunction"/>
+			<dependency name="E_FIXES_OnFilterScriptInit"/>
+			<dependency name="FIXES_OnScriptInit"/>
+			<dependency name="FIXES_gsCallbackHooks1"/>
+			<dependency name="FIXES_gsSettings"/>
+			<dependency name="FIXES_gscFilterScriptInit"/>
+			<dependency name="FIXES_gscSpec@"/>
+			<dependency name="_FIXES_gIsFilterscript"/>
+			<dependency name="e_FIXES_SETTINGS_DROP_ALL_DATA"/>
+			<dependency name="true"/>
+		</member>
+		<member name="M:OnGameModeExit" syntax="OnGameModeExit()">
+			<attribute name="public"/>
+			<stacksize value="5"/>
+			<dependency name="CallLocalFunction"/>
+			<dependency name="E_FIXES_OnGameModeExit"/>
+			<dependency name="FIXES_DetermineOrder"/>
+			<dependency name="FIXES_gsCallbackHooks1"/>
+			<dependency name="FIXES_gsSettings"/>
+			<dependency name="FIXES_gscGameModeExit"/>
+			<dependency name="FIXES_gscSpec@"/>
+			<dependency name="_FIXES_gIsFilterscript"/>
+			<dependency name="e_FIXES_SETTINGS_DROP_ALL_DATA"/>
+			<dependency name="e_FIXES_SETTINGS_ENDING"/>
+			<dependency name="e_FIXES_SETTINGS_IN_CHARGE"/>
+		</member>
+		<member name="M:OnGameModeInit" syntax="OnGameModeInit()">
+			<attribute name="public"/>
+			<stacksize value="5"/>
+			<dependency name="CallLocalFunction"/>
+			<dependency name="E_FIXES_OnGameModeInit"/>
+			<dependency name="FIXES_OnScriptInit"/>
+			<dependency name="FIXES_gsCallbackHooks1"/>
+			<dependency name="FIXES_gsSettings"/>
+			<dependency name="FIXES_gscGameModeInit"/>
+			<dependency name="FIXES_gscSpec@"/>
+			<dependency name="_FIXES_gIsFilterscript"/>
+			<dependency name="e_FIXES_SETTINGS_DROP_ALL_DATA"/>
+			<dependency name="e_FIXES_SETTINGS_INTERIOR"/>
+		</member>
+		<member name="M:OnPlayerCommandText" syntax="OnPlayerCommandText(playerid, cmdtext[])">
+			<attribute name="public"/>
+			<stacksize value="7"/>
+			<dependency name="CallLocalFunction"/>
+			<dependency name="E_FIXES_OnPlayerCommandText"/>
+			<dependency name="FIXES_gsCallbackHooks1"/>
+			<dependency name="FIXES_gscNULL"/>
+			<dependency name="FIXES_gscPlayerCommandText"/>
+			<dependency name="FIXES_gscSpec@is"/>
+			<param name="playerid">
+			</param>
+			<param name="cmdtext">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:OnPlayerConnect" syntax="OnPlayerConnect(playerid)">
+			<attribute name="public"/>
+			<stacksize value="16"/>
+			<dependency name="CallLocalFunction"/>
+			<dependency name="DisablePlayerCheckpoint"/>
+			<dependency name="DisablePlayerRaceCheckpoint"/>
+			<dependency name="E_FIXES_OnPlayerConnect"/>
+			<dependency name="E_FIXES_WORLDBOUND_DATA_LX"/>
+			<dependency name="E_FIXES_WORLDBOUND_DATA_LY"/>
+			<dependency name="E_FIXES_WORLDBOUND_DATA_UX"/>
+			<dependency name="E_FIXES_WORLDBOUND_DATA_UY"/>
+			<dependency name="FIXES_gsCallbackHooks1"/>
+			<dependency name="FIXES_gsPlayerBools"/>
+			<dependency name="FIXES_gsWorldbounds"/>
+			<dependency name="FIXES_gsWorldbounds"/>
+			<dependency name="FIXES_gscPlayerColours"/>
+			<dependency name="FIXES_gscPlayerConnect"/>
+			<dependency name="FIXES_gscSpec@i"/>
+			<dependency name="FIXES_gscTempName"/>
+			<dependency name="FIXES_pvarNotNewPlayer"/>
+			<dependency name="FIXES_pvarPlayerDialog"/>
+			<dependency name="FIXES_pvarPlayerSkin"/>
+			<dependency name="FIXES_pvarPlayerWeapon"/>
+			<dependency name="GetPVarInt"/>
+			<dependency name="GetPlayerName"/>
+			<dependency name="Kick"/>
+			<dependency name="SetPVarInt"/>
+			<dependency name="SetPlayerColor"/>
+			<dependency name="SetSpawnInfo"/>
+			<dependency name="e_FIXES_BOOLS_ON_PLAYER_CONNECT"/>
+			<dependency name="strcmp"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:OnPlayerDeath" syntax="OnPlayerDeath(playerid, killerid, reason)">
+			<attribute name="public"/>
+			<stacksize value="8"/>
+			<dependency name="CallLocalFunction"/>
+			<dependency name="ClearAnimations"/>
+			<dependency name="E_FIXES_OnPlayerDeath"/>
+			<dependency name="FIXES_gsCallbackHooks1"/>
+			<dependency name="FIXES_gsLastAnimation"/>
+			<dependency name="FIXES_gsSettings"/>
+			<dependency name="FIXES_gscPlayerDeath"/>
+			<dependency name="FIXES_gscSpec@iii"/>
+			<dependency name="GetAnimationName"/>
+			<dependency name="e_FIXES_SETTINGS_IN_CHARGE"/>
+			<dependency name="strcmp"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+			<param name="killerid">
+			</param>
+			<param name="reason">
+			</param>
+		</member>
+		<member name="M:OnPlayerDisconnect" syntax="OnPlayerDisconnect(playerid, reason)">
+			<attribute name="public"/>
+			<stacksize value="9"/>
+			<dependency name="CallLocalFunction"/>
+			<dependency name="E_FIXES_OnPlayerDisconnect"/>
+			<dependency name="FIXES_gsCallbackHooks1"/>
+			<dependency name="FIXES_gsObjectSlots"/>
+			<dependency name="FIXES_gsPlayerBools"/>
+			<dependency name="FIXES_gscPlayerDisconnect"/>
+			<dependency name="FIXES_gscSpec@ii"/>
+			<dependency name="FIXES_pvarKick"/>
+			<dependency name="GetPVarInt"/>
+			<dependency name="KillTimer"/>
+			<dependency name="RemovePlayerAttachedObject"/>
+			<dependency name="_FIXES_gIsFilterscript"/>
+			<dependency name="cellbits"/>
+			<dependency name="e_FIXES_BOOLS_KICKED"/>
+			<param name="playerid">
+			</param>
+			<param name="reason">
+			</param>
+		</member>
+		<member name="M:OnPlayerInteriorChange" syntax="OnPlayerInteriorChange(playerid, newinteriorid, oldinteriorid)">
+			<attribute name="public"/>
+			<stacksize value="8"/>
+			<dependency name="CallLocalFunction"/>
+			<dependency name="E_FIXES_OnPlayerInteriorChange"/>
+			<dependency name="FIXES_gsCallbackHooks2"/>
+			<dependency name="FIXES_gsPlayerBools"/>
+			<dependency name="FIXES_gsSettings"/>
+			<dependency name="FIXES_gscPlayerInteriorChange"/>
+			<dependency name="FIXES_gscSpec@iii"/>
+			<dependency name="FIXES_pvarPlayerWeapon"/>
+			<dependency name="IsPlayerInAnyVehicle"/>
+			<dependency name="SetPVarInt"/>
+			<dependency name="SetPlayerArmedWeapon"/>
+			<dependency name="e_FIXES_BOOLS_INTERIOR"/>
+			<dependency name="e_FIXES_SETTINGS_INTERIOR"/>
+			<dependency name="e_FIXES_SETTINGS_IN_CHARGE"/>
+			<param name="playerid">
+			</param>
+			<param name="newinteriorid">
+			</param>
+			<param name="oldinteriorid">
+			</param>
+		</member>
+		<member name="M:OnPlayerSpawn" syntax="OnPlayerSpawn(playerid)">
+			<attribute name="public"/>
+			<stacksize value="6"/>
+			<dependency name="CallLocalFunction"/>
+			<dependency name="E_FIXES_OnPlayerSpawn"/>
+			<dependency name="FIXES_gsCallbackHooks1"/>
+			<dependency name="FIXES_gsPlayerBools"/>
+			<dependency name="FIXES_gscPlayerSpawn"/>
+			<dependency name="FIXES_gscSpec@i"/>
+			<dependency name="FIXES_pvarPlayerSkin"/>
+			<dependency name="GetPlayerSkin"/>
+			<dependency name="SetPVarInt"/>
+			<dependency name="e_FIXES_BOOLS_UNCONTROLLABLE"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:OnPlayerStateChange" syntax="OnPlayerStateChange(playerid, newstate, oldstate)">
+			<attribute name="public"/>
+			<stacksize value="8"/>
+			<dependency name="CallLocalFunction"/>
+			<dependency name="E_FIXES_OnPlayerStateChange"/>
+			<dependency name="FIXES_BlockUpdate"/>
+			<dependency name="FIXES_gsCallbackHooks1"/>
+			<dependency name="FIXES_gsPlayerBools"/>
+			<dependency name="FIXES_gsSettings"/>
+			<dependency name="FIXES_gsVehicleSeatData"/>
+			<dependency name="FIXES_gscMaxPassengers"/>
+			<dependency name="FIXES_gscPlayerStateChange"/>
+			<dependency name="FIXES_gscSpec@iii"/>
+			<dependency name="FIXES_pvarPlayerWeapon"/>
+			<dependency name="GetPlayerVehicleID"/>
+			<dependency name="GetPlayerVehicleSeat"/>
+			<dependency name="GetPlayerWeapon"/>
+			<dependency name="GetVehicleModel"/>
+			<dependency name="Kick"/>
+			<dependency name="PutPlayerInVehicle"/>
+			<dependency name="SetCameraBehindPlayer"/>
+			<dependency name="SetPVarInt"/>
+			<dependency name="SetPlayerArmedWeapon"/>
+			<dependency name="e_FIXES_BOOLS_PUT_IN_TRAIN"/>
+			<dependency name="e_FIXES_BOOLS_PUT_IN_VEHICLE"/>
+			<dependency name="e_FIXES_SETTINGS_IN_CHARGE"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+			<param name="newstate">
+			</param>
+			<param name="oldstate">
+			</param>
+		</member>
+		<member name="M:OnPlayerUpdate" syntax="OnPlayerUpdate(playerid)">
+			<attribute name="public"/>
+			<stacksize value="14"/>
+			<dependency name="CallLocalFunction"/>
+			<dependency name="E_FIXES_OnPlayerUpdate"/>
+			<dependency name="E_FIXES_WORLDBOUND_DATA_LX"/>
+			<dependency name="E_FIXES_WORLDBOUND_DATA_LY"/>
+			<dependency name="E_FIXES_WORLDBOUND_DATA_PX"/>
+			<dependency name="E_FIXES_WORLDBOUND_DATA_PY"/>
+			<dependency name="E_FIXES_WORLDBOUND_DATA_PZ"/>
+			<dependency name="E_FIXES_WORLDBOUND_DATA_UX"/>
+			<dependency name="E_FIXES_WORLDBOUND_DATA_UY"/>
+			<dependency name="FIXES_gsCallbackHooks2"/>
+			<dependency name="FIXES_gsLastAnimation"/>
+			<dependency name="FIXES_gsPlayerBools"/>
+			<dependency name="FIXES_gsSettings"/>
+			<dependency name="FIXES_gsWorldbounds"/>
+			<dependency name="FIXES_gsWorldbounds"/>
+			<dependency name="FIXES_gscPlayerUpdate"/>
+			<dependency name="FIXES_gscSpec@i"/>
+			<dependency name="GetPlayerAnimationIndex"/>
+			<dependency name="GetPlayerKeys"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="SetPlayerArmedWeapon"/>
+			<dependency name="SetPlayerPos"/>
+			<dependency name="e_FIXES_BOOLS_BLOCK"/>
+			<dependency name="e_FIXES_BOOLS_INTERIOR"/>
+			<dependency name="e_FIXES_BOOLS_UNCONTROLLABLE"/>
+			<dependency name="e_FIXES_BOOLS_WORLDBOUNDS"/>
+			<dependency name="e_FIXES_SETTINGS_IN_CHARGE"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:PutPlayerInVehicle" syntax="PutPlayerInVehicle()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_SetPlayerSkin"/>
+			<referrer name="OnPlayerStateChange"/>
+			<referrer name="FIXES_PutPlayerInVehicle"/>
+		</member>
+		<member name="M:RemovePlayerAttachedObject" syntax="RemovePlayerAttachedObject()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerDisconnect"/>
+			<referrer name="FIXES_RemovePlayerAttachedObj"/>
+		</member>
+		<member name="M:SetCameraBehindPlayer" syntax="SetCameraBehindPlayer()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerStateChange"/>
+		</member>
+		<member name="M:SetPVarInt" syntax="SetPVarInt()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerConnect"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="FIXES_SetPlayerSkin"/>
+			<referrer name="OnPlayerInteriorChange"/>
+			<referrer name="OnPlayerStateChange"/>
+			<referrer name="FIXES_GivePlayerWeapon"/>
+			<referrer name="FIXES_SetPlayerArmedWeapon"/>
+			<referrer name="FIXES_ShowPlayerDialog"/>
+			<referrer name="FIXES_Kick"/>
+		</member>
+		<member name="M:SetPlayerArmedWeapon" syntax="SetPlayerArmedWeapon()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerUpdate"/>
+			<referrer name="OnPlayerInteriorChange"/>
+			<referrer name="OnPlayerStateChange"/>
+			<referrer name="FIXES_GivePlayerWeapon"/>
+			<referrer name="FIXES_SetPlayerArmedWeapon"/>
+		</member>
+		<member name="M:SetPlayerAttachedObject" syntax="SetPlayerAttachedObject()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_SetPlayerAttachedObject"/>
+		</member>
+		<member name="M:SetPlayerCheckpoint" syntax="SetPlayerCheckpoint()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_SetPlayerCheckpoint"/>
+		</member>
+		<member name="M:SetPlayerColor" syntax="SetPlayerColor()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerConnect"/>
+		</member>
+		<member name="M:SetPlayerName" syntax="SetPlayerName()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_SetPlayerName"/>
+		</member>
+		<member name="M:SetPlayerPos" syntax="SetPlayerPos()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_SpawnPlayer"/>
+			<referrer name="OnPlayerUpdate"/>
+			<referrer name="FIXES_PutPlayerInVehicle"/>
+		</member>
+		<member name="M:SetPlayerRaceCheckpoint" syntax="SetPlayerRaceCheckpoint()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_SetPlayerRaceCheckpoint"/>
+		</member>
+		<member name="M:SetPlayerSkin" syntax="SetPlayerSkin()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_SetPlayerSkin"/>
+		</member>
+		<member name="M:SetPlayerSpecialAction" syntax="SetPlayerSpecialAction()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_SetPlayerSpecialAction"/>
+		</member>
+		<member name="M:SetPlayerWorldBounds" syntax="SetPlayerWorldBounds()">
+			<stacksize value="1"/>
+			<referrer name="_FIXES_SetPlayerWorldBounds"/>
+		</member>
+		<member name="M:SetSpawnInfo" syntax="SetSpawnInfo()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerConnect"/>
+		</member>
+		<member name="M:SetTimerEx" syntax="SetTimerEx()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_Kick"/>
+		</member>
+		<member name="M:ShowPlayerDialog" syntax="ShowPlayerDialog()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_ShowPlayerDialog"/>
+		</member>
+		<member name="M:SpawnPlayer" syntax="SpawnPlayer()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_SpawnPlayer"/>
+		</member>
+		<member name="M:TextDrawCreate" syntax="TextDrawCreate()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_TextDrawCreate"/>
+		</member>
+		<member name="M:TextDrawSetString" syntax="TextDrawSetString()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_TextDrawSetString"/>
+		</member>
+		<member name="M:TogglePlayerControllable" syntax="TogglePlayerControllable()">
+			<stacksize value="1"/>
+			<referrer name="_FIXES_TogglePlayerControllable"/>
+		</member>
+		<member name="M:TogglePlayerSpectating" syntax="TogglePlayerSpectating()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_Kick"/>
+		</member>
+		<member name="M:_FIXES_AllowInteriorWeapons" syntax="_FIXES_AllowInteriorWeapons(allow)">
+			<attribute name="public"/>
+			<stacksize value="5"/>
+			<dependency name="FIXES_gsPlayerBools"/>
+			<dependency name="FIXES_gsSettings"/>
+			<dependency name="GetPlayerInterior"/>
+			<dependency name="e_FIXES_BOOLS_INTERIOR"/>
+			<dependency name="e_FIXES_SETTINGS_INTERIOR"/>
+			<param name="allow">
+			</param>
+		</member>
+		<member name="M:_FIXES_DetermineOrder" syntax="_FIXES_DetermineOrder()">
+			<attribute name="public"/>
+			<stacksize value="11"/>
+			<dependency name="CallRemoteFunction"/>
+			<dependency name="E_FIXES_WORLDBOUND_DATA_LX"/>
+			<dependency name="E_FIXES_WORLDBOUND_DATA_LY"/>
+			<dependency name="E_FIXES_WORLDBOUND_DATA_UX"/>
+			<dependency name="E_FIXES_WORLDBOUND_DATA_UY"/>
+			<dependency name="FIXES_IsPlayerConnected"/>
+			<dependency name="FIXES_gsObjectSlots"/>
+			<dependency name="FIXES_gsPlayerBools"/>
+			<dependency name="FIXES_gsSettings"/>
+			<dependency name="FIXES_gsVehicleSeatData"/>
+			<dependency name="FIXES_gsWorldbounds"/>
+			<dependency name="FIXES_gsWorldbounds"/>
+			<dependency name="FIXES_gscAllowInteriorWeapons"/>
+			<dependency name="FIXES_gscNoGMProperty"/>
+			<dependency name="FIXES_gscOrderProperty"/>
+			<dependency name="FIXES_gscPutPlayerInVehicle"/>
+			<dependency name="FIXES_gscSetPlayerAttachedObj"/>
+			<dependency name="FIXES_gscSetPlayerWorldBounds"/>
+			<dependency name="FIXES_gscSpec@i"/>
+			<dependency name="FIXES_gscSpec@iffff"/>
+			<dependency name="FIXES_gscSpec@ii"/>
+			<dependency name="FIXES_gscSpec@iii"/>
+			<dependency name="FIXES_gscTogglePlayerControl"/>
+			<dependency name="_FIXES_gIsFilterscript"/>
+			<dependency name="cellbits"/>
+			<dependency name="e_FIXES_BOOLS_PUT_IN_VEHICLE"/>
+			<dependency name="e_FIXES_BOOLS_UNCONTROLLABLE"/>
+			<dependency name="e_FIXES_SETTINGS_DROP_ALL_DATA"/>
+			<dependency name="e_FIXES_SETTINGS_ENDING"/>
+			<dependency name="e_FIXES_SETTINGS_INTERIOR"/>
+			<dependency name="e_FIXES_SETTINGS_IN_CHARGE"/>
+			<dependency name="existproperty"/>
+			<dependency name="getproperty"/>
+			<dependency name="setproperty"/>
+		</member>
+		<member name="M:_FIXES_Kick" syntax="_FIXES_Kick(playerid)">
+			<attribute name="public"/>
+			<stacksize value="4"/>
+			<dependency name="FIXES_gsPlayerBools"/>
+			<dependency name="Kick"/>
+			<dependency name="e_FIXES_BOOLS_KICKED"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:_FIXES_PutPlayerInVehicle" syntax="_FIXES_PutPlayerInVehicle(playerid, vehicleid, seatid, from, data)">
+			<attribute name="public"/>
+			<stacksize value="1"/>
+			<dependency name="FIXES_gsPlayerBools"/>
+			<dependency name="FIXES_gsSettings"/>
+			<dependency name="FIXES_gsVehicleSeatData"/>
+			<dependency name="e_FIXES_BOOLS_PUT_IN_TRAIN"/>
+			<dependency name="e_FIXES_BOOLS_PUT_IN_VEHICLE"/>
+			<dependency name="e_FIXES_SETTINGS_IN_CHARGE"/>
+			<param name="playerid">
+			</param>
+			<param name="vehicleid">
+			</param>
+			<param name="seatid">
+			</param>
+			<param name="from">
+			</param>
+			<param name="data">
+			</param>
+		</member>
+		<member name="M:_FIXES_SetPlayerAttachedObject" syntax="_FIXES_SetPlayerAttachedObject(slot, to)">
+			<attribute name="public"/>
+			<stacksize value="1"/>
+			<dependency name="FIXES_gsObjectSlots"/>
+			<param name="slot">
+			</param>
+			<param name="to">
+			</param>
+		</member>
+		<member name="M:_FIXES_SetPlayerWorldBounds" syntax="_FIXES_SetPlayerWorldBounds(playerid, x_max, x_min, y_max, y_min)">
+			<attribute name="public"/>
+			<stacksize value="11"/>
+			<dependency name="E_FIXES_WORLDBOUND_DATA_LX"/>
+			<dependency name="E_FIXES_WORLDBOUND_DATA_LY"/>
+			<dependency name="E_FIXES_WORLDBOUND_DATA_PX"/>
+			<dependency name="E_FIXES_WORLDBOUND_DATA_PY"/>
+			<dependency name="E_FIXES_WORLDBOUND_DATA_PZ"/>
+			<dependency name="E_FIXES_WORLDBOUND_DATA_UX"/>
+			<dependency name="E_FIXES_WORLDBOUND_DATA_UY"/>
+			<dependency name="FIXES_gsPlayerBools"/>
+			<dependency name="FIXES_gsSettings"/>
+			<dependency name="FIXES_gsWorldbounds"/>
+			<dependency name="FIXES_gsWorldbounds"/>
+			<dependency name="FIXES_gscReturnProperty"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="SetPlayerWorldBounds"/>
+			<dependency name="e_FIXES_BOOLS_WORLDBOUNDS"/>
+			<dependency name="e_FIXES_SETTINGS_IN_CHARGE"/>
+			<dependency name="setproperty"/>
+			<param name="playerid">
+			</param>
+			<param name="x_max">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="x_min">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="y_max">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="y_min">
+				<paraminfo>Float </paraminfo>
+			</param>
+		</member>
+		<member name="M:_FIXES_TogglePlayerControllable" syntax="_FIXES_TogglePlayerControllable(playerid, toggle)">
+			<attribute name="public"/>
+			<stacksize value="7"/>
+			<dependency name="FIXES_gsPlayerBools"/>
+			<dependency name="FIXES_gsSettings"/>
+			<dependency name="FIXES_gscReturnProperty"/>
+			<dependency name="TogglePlayerControllable"/>
+			<dependency name="e_FIXES_BOOLS_UNCONTROLLABLE"/>
+			<dependency name="e_FIXES_SETTINGS_IN_CHARGE"/>
+			<dependency name="setproperty"/>
+			<param name="playerid">
+			</param>
+			<param name="toggle">
+			</param>
+		</member>
+		<member name="M:deleteproperty" syntax="deleteproperty()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_DetermineOrder"/>
+		</member>
+		<member name="M:existproperty" syntax="existproperty()">
+			<stacksize value="1"/>
+			<referrer name="_FIXES_DetermineOrder"/>
+		</member>
+		<member name="M:fblockread" syntax="fblockread()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_fblockread"/>
+		</member>
+		<member name="M:fblockwrite" syntax="fblockwrite()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_fblockwrite"/>
+		</member>
+		<member name="M:fclose" syntax="fclose()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_fclose"/>
+		</member>
+		<member name="M:fgetchar" syntax="fgetchar()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_fgetchar"/>
+		</member>
+		<member name="M:flength" syntax="flength()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_flength"/>
+		</member>
+		<member name="M:format" syntax="format()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_valstr"/>
+			<referrer name="FIXES_strins"/>
+		</member>
+		<member name="M:fputchar" syntax="fputchar()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_fputchar"/>
+		</member>
+		<member name="M:fread" syntax="fread()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_fread"/>
+		</member>
+		<member name="M:fseek" syntax="fseek()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_fseek"/>
+		</member>
+		<member name="M:funcidx" syntax="funcidx()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_OnScriptInit"/>
+		</member>
+		<member name="M:fwrite" syntax="fwrite()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_fwrite"/>
+		</member>
+		<member name="M:getproperty" syntax="getproperty()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_SetPlayerWorldBounds"/>
+			<referrer name="FIXES_TogglePlayerControllable"/>
+			<referrer name="_FIXES_DetermineOrder"/>
+		</member>
+		<member name="M:setproperty" syntax="setproperty()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_DetermineOrder"/>
+			<referrer name="_FIXES_SetPlayerWorldBounds"/>
+			<referrer name="_FIXES_TogglePlayerControllable"/>
+			<referrer name="_FIXES_DetermineOrder"/>
+		</member>
+		<member name="M:strcat" syntax="strcat()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_GetWeaponName"/>
+			<referrer name="FIXES_strins"/>
+		</member>
+		<member name="M:strcmp" syntax="strcmp()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerConnect"/>
+			<referrer name="OnPlayerDeath"/>
+			<referrer name="FIXES_SetPlayerName"/>
+		</member>
+		<member name="M:strins" syntax="strins()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_strins"/>
+		</member>
+		<member name="M:strlen" syntax="strlen()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_strins"/>
+		</member>
+		<member name="M:strpack" syntax="strpack()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_valstr"/>
+		</member>
+		<member name="M:strunpack" syntax="strunpack()">
+			<stacksize value="1"/>
+			<referrer name="FIXES_valstr"/>
+		</member>
+
+	</members>
+</doc>

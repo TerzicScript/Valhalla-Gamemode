@@ -1,0 +1,32 @@
+{
+    "user": "oscar-broman",
+    "repo": "SKY",
+    "contributors": [
+        "Slice", 
+        "Kurta999",
+        "Y_Less",
+        "Illidan",
+        "Whitetigerswt",
+        "BrunoBM16",
+        "Alanskz/J0sh",
+        "NickDodd25",
+        "JustMichael/ADRFranklin"
+    ],
+    "resources": [
+        {
+            "name": "release-windows.zip",
+            "platform": "windows",
+            "archive": true,
+            "plugins": ["SKY.dll"]
+        },
+        {
+            "name": "release-linux.tar.gz",
+            "platform": "linux",
+            "archive": true,
+            "plugins": ["SKY.so"]            
+        }
+    ],    
+    "runtime": {
+        "plugins": ["oscar-broman/SKY"]
+    }
+}

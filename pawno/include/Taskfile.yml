@@ -1,0 +1,26 @@
+version: "2"
+
+tasks:
+  build:
+    cmds:
+      - task setup
+      - task build:linux
+      - task build:windows
+
+  setup:
+    cmds:
+      - rm -rf build/
+      - mkdir -p build/linux
+      - mkdir -p build/windows
+
+  build:linux:
+    cmds:
+      - docker build --no-cache -t oscar-broman/sky:linux --build-arg build=Release .
+      - docker run --volume=$(pwd)/build:/work/build oscar-broman/sky:linux
+
+  build:windows:
+    dir: build/windows
+    cmds:
+      - cmake ../.. -A Win32
+      - cmake --build . --config Release
+      - cpack
